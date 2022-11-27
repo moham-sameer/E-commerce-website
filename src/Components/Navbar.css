@@ -1,0 +1,29 @@
+.navitem{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+}
+
+.out{
+ margin-left: 1rem;
+}
+
+.active{
+    color: whitesmoke;
+}
+
+.navlink:hover{
+    color: brown;
+    font-weight: 500;
+}
+
+
+@media (max-width:800px) and (min-width:300px){
+    
+    .navlink{
+        font-size: 12rem;
+    }
+  
+}

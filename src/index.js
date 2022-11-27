@@ -3,12 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer, {getTotals} from './Store/CartSlice'
+import { Provider } from 'react-redux';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = configureStore({
+  reducer:{
+
+    cart:cartReducer
+  }
+})
+store.dispatch(getTotals())
 root.render(
   <React.StrictMode>
+  <Auth0Provider
+    domain="sameersheikh.us.auth0.com"
+    clientId="3G6oLrXKLmUtwebVAaWHMUYET7TxEcJi"
+    redirectUri={window.location.origin}
+  >
+  <Provider store={store}>
     <App />
+  </Provider>
+  </Auth0Provider>,
   </React.StrictMode>
+
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

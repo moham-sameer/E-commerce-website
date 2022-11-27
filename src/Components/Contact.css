@@ -1,0 +1,38 @@
+.component{
+    padding-top: 7rem;
+}
+
+
+@media (max-width:1580px) and (min-width:680px){
+    .form-control{
+        width: 34rem;
+        margin-right: 44rem;
+    }
+    .form-label{
+        font-size: 1.5rem;
+        margin-right: 44rem;
+
+    }
+    .component h1{
+        margin-left: 2rem;
+    }
+    
+}
+@media (max-width:2000px) and(min-width:1600px){
+
+    .component h1{
+        margin-left: rem;
+        font-size: 9rem;
+    }  
+.form-control{
+    width: 34rem;
+    margin-right: 50rem;
+}
+.form-label{
+    font-size: .9rem;
+    margin-right: 50rem;
+
+}
+
+
+}

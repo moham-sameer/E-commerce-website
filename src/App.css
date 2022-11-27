@@ -1,38 +1,431 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   color: black;
+   transition: linear 0.3s ease-in;
+}
+html{
+  scroll-behavior: smooth;
+}
+.products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body nav{
+  background-color: orangered;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 3rem;
+
+}
+#brand{
+  font-weight: 700;
+  font-size: xx-large;
+}
+.body > nav > ul{
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+  height: 4rem;
+}
+.body > nav > ul > li{
+  padding: 0 2rem;
+  list-style: none;
+  font-weight: 500;
+}
+.body > nav > ul > li > a{
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+
+}
+.active{
+  color: whitesmoke;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.product{
+  background-color: whitesmoke;
+   height: 28rem;
+   width: 20rem;
+   margin-top: 8rem;
+   border-radius: 1rem;
+   margin-left: 4rem;
   }
-}
+  .products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  }
+.product:hover{
+  
+  box-shadow: 0px 0px 9px 6px rgb(0,0,0,0.3);
+}
+.product .content{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+}
+.product button{
+  margin-left: 7rem;
+   padding: 8px 9px;
+   background-color: rgb(51, 51, 170);
+   color: white;
+   border-radius: 6px;
+   border: none;
+   outline: none;
+   letter-spacing: 2px;
+   font-weight: 400;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.product button:hover{
+  background-color: rgb(36, 36, 216);
+}
+.product .content p{
+  margin: 2px;
+}
+.product img{
+  overflow: hidden;
+  height: 60%;
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+
+/*! -----------For Cart Component---------------- */
+
+.data{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  margin-left: 6rem;
+}
+
+.cart h1{
+text-align: center;
+font-size: 3rem;
+margin: 2rem 0;
+}
+.data h3{
+  border-bottom: 1px solid lightgray;
+}
+
+.data{
+  border-bottom: 1px solid lightgray;
+   margin-top: 3rem;
+}
+.cfiles{
+  display: flex;
+  
+}
+
+.data > span{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 3.4rem;
+  margin-right: 2rem;
+  justify-content: space-evenly;
+   border: 1px solid lightgray;
+   width: 6rem;
+   height: 2rem;
+}
+.data > span > p{
+  margin-top: 0.3rem;
+}
+.data > span > button{
+  border: none;
+  outline: none;
+  background-color: white;
+  margin-top: 0.5rem;
+  cursor: pointer;
+
+}
+.items > img{
+  margin-top: 12px;
+  padding-bottom: 2rem;
+}
+.padding, .check{
+  margin-right: 5rem;
+}
+.continue p{
+  display: flex;
+}
+
+ #tprice, #price{
+  padding-top: 3.4rem;
+}
+
+.data, .items{
+  margin-top: 1rem;
+}
+
+.submit{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 8rem;
+  padding-top: 3rem;
+
+}
+
+.submit button{
+  background-color: rgb(74, 74, 190);
+  margin: 2px 8px;
+  padding: 0.7rem 6rem;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+  font-size: 1rem;
   color: white;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+.submit button:hover{
+  background-color: rgb(94, 94, 223);
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1.3rem;
+  margin-left: 0.8rem;
+  
+}
+.text{
+  font-size: 0.8rem;
+  margin-left: 0.6rem;
+  color: rgb(180, 179, 179);
+  margin-top: 0.5rem ;
+  margin-bottom: 0.5rem ;
+}
+.shop{
+  color: gray;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+#clear{
+  background-color: whitesmoke;
+  margin: 2px 8px;
+  padding: 1rem 3rem;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+  
 }
 
-.App-link {
-  color: #61dafb;
+#clear:hover{
+  background-color: rgb(216, 215, 215);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.items{
+  display: flex;
+  align-items: flex-start;
+}
+.items > img{
+  height: 15rem;
+}
+
+.desc{
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+.desc button{
+  background: none;
+  border: none;
+  outline: none;
+  padding-top: 1rem;
+  color: gray;
+  cursor: pointer;
+}
+.desc button:hover{
+  color: black;
+}
+.empty-cart{
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+.start-shopping{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  color: gray;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.start-shopping:hover{
+color: black;
+}
+
+#button{
+  background-color: orangered;
+  border: none;
+  /* margin: 5px 19px; 
+   padding: 3.5px 15px; */
+  outline: none;
+  border-radius: 7px;
+  font-weight: 500;
+  margin-top: 7px;
+  font-size: 16px;
+  cursor: pointer;
+   height: 2rem;
+   width: 6.5rem;
+
+}
+#button:hover{
+  background-color: rgb(241, 70, 8);
+    
+}
+
+#menu-icon{
+  display: none;
+}
+/*! -------------For Mobile development------------------- */
+
+@media (max-width:800px) and (min-width:300px){
+  .body > .navBar-mobile{
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: fixed;
+    
+    }
+   
+  .body > .navBar-mobile > .navlinks-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6rem;
+    
   }
-  to {
-    transform: rotate(360deg);
+  #logo{
+    display: none;
   }
+  .body > .navBar > .navlinks > li{
+    display: none;
+  }
+  .body > nav > ul > li{
+    margin: 1.6rem 0 ;
+    margin-right: 2rem;
+    background:  black ;
+    border-radius: 15px;
+    padding: 5px 17px;
+    width: 15rem;
+    text-align: center;
+     
+   
+  }
+  .body > nav > ul > li:hover{
+    background-color: white;
+    letter-spacing: 5px;
+  }
+  .body > nav > ul > li > a{
+    font-size: 1.3rem;
+  }
+  .body > nav > ul > li > a:hover{
+    color: black;
+  }
+  /* .navlink{
+    font-size: 12rem;
+  } */
+  /* #brand{
+    display: none;
+  } */
+  #menu-icon{
+    display: block;
+    position: absolute;
+     
+  }
+  .fa-bars{
+    
+    position: fixed;
+    top: 1.3rem;
+    right: 1.6rem;
+  }
+  .fa-times{
+    position: fixed;
+    top: 1.3rem;
+    right: 1.6rem;
+  }
+ 
+  #shopCart{
+    display: block;
+    position: fixed;
+    top: 1.1rem;
+    right: 4.5rem;
+  }
+  #cart{
+    display: none;
+    
+  /* z-index: -1; */
+  }
+   .link{
+    
+   color: #fff;    
+  } 
+  .out{
+    display: none;
+  }
+  .products{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 2rem;
+  }
+  .product{
+    background-color: whitesmoke;
+     height: 25rem;
+     width: 14rem;
+     margin-top: 8rem;
+     border-radius: 1rem;
+     /* margin-left: 5.5rem; */
+    }
+  
+  .product .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    /* font-size: 15px; */
+  }
+  .product button{
+    font-size: 10px;
+  }
+  /* .product button:hover{
+    background-color: rgb(36, 36, 216);
+  }
+  .product .content p{
+    margin: 2px;
+  }*/
+  .product img{
+    overflow: hidden;
+    height: 65%;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  } 
+   
+}
+
+@media (max-width:790px) and (min-width:420px){
+  .products{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 5rem;
+  }
+  
 }
