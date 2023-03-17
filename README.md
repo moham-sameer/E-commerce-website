@@ -1,5 +1,7 @@
 <h2 align="left">E-commerce-website :rocket: </h2>
-  [visit](https://samstore.netlify.app) 
+ 
+[Visit](https://samstore.netlify.app)
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
